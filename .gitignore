@@ -1,0 +1,14 @@
+node_modules/
+typeset/out/
+typeset/dout/
+__pycache__/
+*.pyc
+.DS_Store
+
+# 강의자료·교재 원본과 강의 내용을 담은 산출물은 올리지 않는다
+source/
+book/
+d_book/
+samples/sample_*
+*.pdf
+!examples/*.pdf

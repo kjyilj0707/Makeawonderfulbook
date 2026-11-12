@@ -1,0 +1,53 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<style>
+@page{ size:215mm 275mm; margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ margin:0; font-family:"Noto Sans CJK KR",sans-serif; color:#161616; }
+.cv{ width:215mm; height:275mm; position:relative; overflow:hidden; background:#FBFAF6; }
+.topbar{ position:absolute; left:0; top:0; width:215mm; height:9mm; background:#161616; }
+.topbar span{ position:absolute; left:20mm; top:2.4mm; color:#F6C300; font-size:8pt; font-weight:800; letter-spacing:.32em; }
+.yel{ position:absolute; left:0; top:9mm; width:132mm; height:154mm; background:#F6C300; }
+.sideband{ position:absolute; right:0; top:9mm; width:13mm; height:266mm; background:#161616; }
+.sideband span{ position:absolute; left:0; width:13mm; top:22mm; writing-mode:vertical-rl; display:flex; align-items:center; color:#F6C300; font-weight:800; font-size:8.5pt; letter-spacing:.28em; white-space:nowrap; }
+.kicker{ position:absolute; left:20mm; top:27mm; font-size:10pt; font-weight:800; letter-spacing:.16em; }
+.kicker b{ background:#161616; color:#F6C300; padding:.8mm 2.6mm; margin-right:3mm; }
+.title{ position:absolute; left:18mm; top:41mm; font-weight:900; font-size:56pt; line-height:1.02; letter-spacing:-.045em; }
+.title small{ display:block; font-size:15pt; letter-spacing:-.01em; font-weight:800; margin-top:5mm; }
+.sub{ position:absolute; left:20mm; top:131mm; font-size:10.5pt; font-weight:700; line-height:1.6; width:105mm; }
+.curve{ position:absolute; left:56mm; top:122mm; width:142mm; }
+.range{ position:absolute; left:20mm; top:186mm; width:170mm; }
+.range .r{ display:flex; align-items:baseline; gap:4mm; border-bottom:.6pt solid #161616; padding:2.4mm 0; font-size:10.5pt; }
+.range .r b{ font-weight:900; width:24mm; font-size:9pt; letter-spacing:.06em; }
+.range .r span{ font-weight:700; }
+.range .r:first-child{ border-top:2.2pt solid #161616; }
+.feat{ position:absolute; left:20mm; top:236mm; display:flex; gap:3mm; }
+.feat div{ border:1.1pt solid #161616; padding:1.4mm 3mm; font-size:8.4pt; font-weight:800; }
+.foot{ position:absolute; left:20mm; bottom:11mm; font-size:7.6pt; color:#777; line-height:1.55; width:170mm; }
+</style></head><body>
+<div class="cv">
+  <div class="topbar"><span>CONCEPT · TEXTBOOK · FINAL EXAM</span></div>
+  <div class="yel"></div>
+  <div class="sideband"><span>STATISTICS &amp; SOCIETY</span></div>
+  <div class="kicker"><b>개념서</b>기말고사 대비</div>
+  <div class="title">통계와<br>사회<small>정규분포 다음부터, 추정과 검정까지</small></div>
+  <svg class="curve" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+    <defs><clipPath id="tail"><rect x="196" y="0" width="120" height="120"/></clipPath></defs>
+    <path d="M0,112 C60,112 92,108 112,80 C128,56 136,10 150,10 C164,10 172,56 188,80 C208,108 240,112 300,112 Z" fill="#161616" clip-path="url(#tail)"/>
+    <path d="M0,112 C60,112 92,108 112,80 C128,56 136,10 150,10 C164,10 172,56 188,80 C208,108 240,112 300,112" fill="none" stroke="#161616" stroke-width="2.6"/>
+    <line x1="0" y1="112.5" x2="300" y2="112.5" stroke="#161616" stroke-width="1.6"/>
+    <line x1="150" y1="10" x2="150" y2="112" stroke="#161616" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="196" y1="62" x2="196" y2="112" stroke="#161616" stroke-width="1.2"/>
+    <text x="150" y="119.5" font-size="6" text-anchor="middle" font-family="Noto Sans CJK KR" font-weight="700">μ</text>
+    <text x="196" y="119.5" font-size="6" text-anchor="middle" font-family="Noto Sans CJK KR" font-weight="700">z</text>
+    <text x="203" y="104" font-size="7" font-family="Noto Sans CJK KR" font-weight="900" fill="#F6C300">α</text>
+  </svg>
+  <div class="sub">강의 슬라이드를 개념 순서대로 다시 짜고,<br>정리 박스 · REMARK · 원본 예제 풀이 · 확인 예제로 엮었다.</div>
+  <div class="range">
+    <div class="r"><b>CHAPTER 6</b><span>연속형 확률분포 — 6.3 지수분포 · 6.4 이항분포의 근사</span></div>
+    <div class="r"><b>CHAPTER 7</b><span>확률표본과 추정 — 중심극한정리 · 점추정 · t·χ² 분포 · 구간추정</span></div>
+    <div class="r"><b>CHAPTER 8</b><span>가설검정 — 평균 · 두 집단 · 짝진표본 · 비율 · 분산의 검정</span></div>
+  </div>
+  <div class="feat"><div>정리 박스</div><div>REMARK</div><div>공식 고르기</div><div>확인 예제 + 정답과 풀이</div><div>시험 대비 팩</div></div>
+  <div class="foot">중앙대학교 교양 「통계와사회」 강의자료(제6~8장, 7·8장 보충)를 바탕으로 만든 개인 학습용 교재입니다. 내용의 근거는 모두 강의 슬라이드이며, 쪽 표시는 원본 슬라이드 쪽입니다.<br>2026년 2학기 · 2026.11.11 제작</div>
+</div>
+</body></html>

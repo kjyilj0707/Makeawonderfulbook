@@ -1,0 +1,200 @@
+/* 통계와사회 개념서 — 인쇄 디자인 (노랑·검정·회색 3색 체계) */
+@page { size: 215mm 275mm; margin: 20mm 30mm 22mm 22mm; }
+
+:root{
+  --y: #F6C300;        /* 주조색 노랑 */
+  --y2: #FFF3BF;       /* 연노랑 면 */
+  --y3: #FFFAE6;
+  --k: #161616;        /* 검정 */
+  --g: #8A8A8A;        /* 회색 */
+  --g2: #E9E9E9;
+  --g3: #F5F5F3;
+  --o: #E0701A;        /* 참고 주황 */
+  --r: #C8372D;        /* 원본 표기 경고 */
+}
+*{ box-sizing: border-box; }
+html{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body{
+  margin:0; color: var(--k);
+  font-family: "Noto Sans CJK KR", "Noto Sans KR", sans-serif;
+  font-size: 9.6pt; line-height: 1.78; word-break: keep-all; overflow-wrap: anywhere;
+  font-weight: 400;
+}
+p{ margin: 0 0 2.4mm; }
+strong{ font-weight: 700; }
+.katex{ font-size: 1.04em; }
+.katex-display{ margin: 2.5mm 0; overflow-x: hidden; overflow-y: hidden; }
+.math-error{ color: var(--r); font-family: monospace; }
+
+/* ===== 오른쪽 세로띠 (장마다 고정) ===== */
+.band{
+  position: fixed; top: -20mm; right: -30mm; width: 13mm; height: 275mm;
+  background: var(--y);
+}
+.band .t{
+  position: absolute; top: 34mm; left: 50%; transform: translateX(-50%) rotate(90deg);
+  transform-origin: center; white-space: nowrap; font-weight: 800; font-size: 9pt; letter-spacing: .08em;
+  width: 120mm; text-align: left; margin-left: -60mm; left: 6.5mm;
+}
+.band .t b{ background: var(--k); color: #fff; padding: .6mm 2.2mm; margin-right: 2.5mm; font-weight: 800; }
+
+/* ===== 장 표지면 ===== */
+.chapter-open{
+  break-before: page; break-after: page; min-height: 228mm; position: relative;
+  padding-top: 26mm;
+}
+.chapter-open .num{ font-size: 64pt; font-weight: 900; line-height: 1; letter-spacing: -.02em; }
+.chapter-open .num span{ display:inline-block; background: var(--y); padding: 0 3mm; }
+.chapter-open h1{ font-size: 25pt; font-weight: 900; margin: 6mm 0 2mm; letter-spacing: -.02em; }
+.chapter-open .range{ color: var(--g); font-size: 9pt; margin-bottom: 9mm; }
+.chapter-open .flow{
+  border-top: 2.2pt solid var(--k); border-bottom: .8pt solid var(--k);
+  padding: 4mm 0; font-weight: 700; font-size: 10.5pt;
+}
+.chapter-open .themelist{ margin-top: 7mm; }
+.chapter-open .themelist div{ display:flex; gap:4mm; padding: 1.6mm 0; border-bottom: .5pt dotted var(--g); font-size: 10pt; }
+.chapter-open .themelist div b{ background: var(--y); padding: 0 2mm; font-weight: 800; min-width: 22mm; }
+
+/* 장 머리 블록 */
+.chapter-intro, .prereq, .symbols{ margin: 0 0 5mm; }
+.chapter-intro{ font-size: 9.2pt; }
+.blk-label{
+  display:inline-block; font-weight: 800; font-size: 8.6pt; letter-spacing: .04em;
+  padding: .5mm 2.4mm; margin-bottom: 2mm;
+}
+.prereq{ background: var(--g3); border-left: 2.4mm solid var(--g); padding: 3.5mm 4.5mm 2mm; }
+.prereq .blk-label{ background: var(--g); color:#fff; }
+.prereq ul{ margin: 0; padding-left: 4.5mm; }
+.symbols .blk-label{ background: var(--k); color: #fff; }
+
+/* ===== 개념(=Theme) 제목 ===== */
+h2.concept{
+  break-before: page; margin: 0 0 4mm; padding: 0; font-size: 18pt; font-weight: 900; letter-spacing: -.02em;
+  display:flex; align-items: stretch; gap: 0;
+}
+h2.concept .no{ background: var(--y); padding: 2mm 3.6mm; font-size: 11pt; font-weight: 900; display:flex; align-items:center; white-space: nowrap; }
+h2.concept .ti{ padding: 1.4mm 0 1.4mm 4mm; border-bottom: 2.2pt solid var(--k); flex:1; }
+h2.plain{ break-before: page; font-size: 17pt; font-weight: 900; border-bottom: 2.2pt solid var(--k); padding-bottom: 2mm; margin: 0 0 5mm; }
+h2.plain::before{ content:""; display:inline-block; width: 4mm; height: 4mm; background: var(--y); margin-right: 3mm; vertical-align: 1mm; }
+
+.map{ font-size: 8.6pt; color: var(--g); margin: 0 0 3mm; padding: 1.6mm 0; border-bottom: .5pt solid var(--g2); }
+.map p{ margin:0; } .map strong{ color: var(--k); background: var(--y2); padding: 0 1mm; }
+.map::before{ content:"지도  "; font-weight: 800; color: var(--k); }
+.intro{ border-left: .8mm solid var(--y); padding: 1mm 0 1mm 4mm; margin: 0 0 6mm; font-size: 9.6pt; color: #333; }
+.intro p{ margin:0; }
+
+/* ===== 소단원 (THEME) ===== */
+h3.theme{ margin: 8mm 0 3mm; font-size: 13pt; font-weight: 800; display:flex; align-items: baseline; gap: 3mm; break-after: avoid; }
+h3.theme .tno{ font-size: 8.4pt; font-weight: 900; color: var(--k); border: 1.2pt solid var(--k); padding: .2mm 1.8mm; letter-spacing: .06em; }
+h3.theme .tti{ border-bottom: 3.2pt solid var(--y); line-height: 1.25; }
+h3.other{ margin: 7mm 0 3mm; font-size: 12pt; font-weight: 800; break-after: avoid; }
+h3.other::before{ content:"■ "; color: var(--y); }
+h4{ font-size: 10.4pt; margin: 5mm 0 2mm; break-after: avoid; }
+
+.question{ font-weight: 700; margin: 0 0 3.5mm; display:flex; gap: 2.5mm; }
+.question::before{ content:"Q"; background: var(--k); color: #fff; font-weight: 900; padding: 0 1.8mm; height: 5.4mm; line-height: 5.4mm; flex: none; }
+.question p{ margin:0; }
+
+/* ===== [정리] 박스 ===== */
+.summary{
+  border: 1.4pt solid var(--y); margin: 4mm 0 5mm; padding: 0 5mm 3mm; break-inside: avoid; position: relative;
+}
+.summary .box-title{
+  display:inline-block; background: var(--y); font-weight: 900; font-size: 9.6pt; padding: 1.2mm 3.5mm 1.2mm 3mm;
+  margin: 0 0 3mm -5mm;
+}
+.summary .box-title::before{ content:"정리 "; font-weight: 900; color: var(--k); opacity:.75; }
+.summary p:last-child{ margin-bottom: 0; }
+.summary .oneline{ border-top: .6pt dashed var(--y); padding-top: 2mm; margin-top: 2mm; font-weight: 700; }
+
+/* ===== REMARK ===== */
+.remark{ margin: 4mm 0 4mm; break-inside: avoid-page; }
+.remark .rm-head{ display:flex; align-items: baseline; gap: 2.5mm; margin-bottom: 1.5mm; }
+.remark .rm-lab{ background: var(--k); color: #fff; font-weight: 900; font-size: 8pt; letter-spacing: .08em; padding: .4mm 2mm; white-space: nowrap; }
+.remark .rm-ti{ font-weight: 800; font-size: 10pt; }
+.remark .rm-body{ padding-left: 1mm; }
+
+.caution{ margin: 3mm 0; padding: 2mm 3.5mm; background: var(--y3); border-left: 1.2mm solid var(--k); break-inside: avoid; }
+.caution::before{ content:"혼동 주의"; display:block; font-size: 8pt; font-weight: 900; letter-spacing: .06em; margin-bottom: .6mm; }
+.caution p{ margin:0; }
+
+.tableread, .pick, .figure{ margin: 4mm 0; break-inside: auto; }
+.figure, .pick{ break-inside: avoid; }
+.tableread .bx-lab, .pick .bx-lab, .figure .bx-lab{ font-weight: 900; font-size: 9pt; margin-bottom: 1.5mm; }
+.tableread .bx-lab::before{ content:"표 읽기 "; background: var(--k); color:#fff; padding: .3mm 1.8mm; margin-right: 2mm; font-size: 8pt; letter-spacing:.06em; }
+.pick{ border: 1pt solid var(--k); padding: 2.5mm 4mm; }
+.pick .bx-lab::before{ content:"공식 고르기 "; background: var(--y); padding: .3mm 1.8mm; margin-right: 2mm; font-size: 8pt; }
+.figure{ background: var(--g3); padding: 3mm 4mm; border-radius: 1.2mm; font-size: 9pt; color: #333; }
+.figure .bx-lab::before{ content:"그림 "; color: var(--g); }
+.interp{ margin: 3mm 0; padding: 2.5mm 4mm; border: .8pt dashed var(--g); break-inside: avoid; }
+.interp::before{ content:"해석 틀"; display:block; font-weight: 900; font-size: 8pt; color: var(--g); margin-bottom: .8mm; letter-spacing:.06em; }
+.interp p{ margin: 0; }
+.origerr{ margin: 2.5mm 0; font-size: 8.4pt; color: #555; border-top: .5pt solid var(--g2); border-bottom: .5pt solid var(--g2); padding: 1.4mm 0; break-inside: avoid; }
+.origerr::before{ content:"원본 표기 확인"; color: var(--r); font-weight: 800; margin-right: 2mm; }
+.origerr p{ display:inline; margin:0; }
+.source{ text-align: right; font-size: 7.8pt; color: var(--g); margin: -1mm 0 3mm; }
+.source p{ margin:0; }
+.chapter-intro .note-ref, .ref{ color: var(--o); font-weight: 700; }
+
+/* 태그 */
+.tag{ font-weight: 700; color: #6b5200; background: var(--y2); padding: 0 .8mm; border-radius: .6mm; white-space: nowrap; }
+
+/* ===== 원본 예제 [예] ===== */
+.example{ margin: 5mm 0; break-inside: avoid-page; }
+.example .ex-head{ font-weight: 900; margin-bottom: 1mm; }
+.example .ex-head span{ border: 1.1pt solid var(--k); padding: .2mm 2mm; font-size: 9pt; }
+.example .solution{ background: var(--g3); padding: 2.6mm 4mm; margin-top: 2mm; font-size: 9.1pt; }
+.example .solution::before{ content:"풀이"; display:block; font-weight: 900; font-size: 8pt; color: var(--g); letter-spacing: .1em; margin-bottom: .6mm; }
+.example .answer{ font-weight: 700; margin-top: 1.6mm; }
+.example .answer p{ margin:0; }
+
+/* ===== 확인문제 (예제 NN) ===== */
+.problems-head{ margin: 9mm 0 3mm; display:flex; align-items:center; gap: 3mm; break-after: avoid; }
+.problems-head .lab{ background: var(--k); color: #fff; font-weight: 900; padding: 1mm 4mm; letter-spacing: .1em; font-size: 9pt; }
+.problems-head .line{ flex:1; border-top: 1pt solid var(--k); }
+.problem{ display:grid; grid-template-columns: 13mm 1fr; column-gap: 3mm; margin: 0 0 3mm; break-inside: avoid; padding-bottom: 3mm; border-bottom: .5pt solid var(--g2); }
+.problem .badge{ width: 11mm; height: 11mm; border-radius: 50%; background: var(--y); font-weight: 900; font-size: 12pt; display:flex; align-items:center; justify-content:center; letter-spacing: -.03em; }
+.problem .meta{ font-size: 7.6pt; color: var(--g); margin-bottom: 1mm; }
+.problem .meta b{ color: var(--k); }
+.problem .space{ height: 26mm; border: .5pt dashed #d7d7d7; border-radius: 1mm; margin-top: 2mm; position: relative; }
+.problem .space::after{ content:"풀이 공간"; position:absolute; right: 2mm; bottom: 1mm; font-size: 6.8pt; color:#c3c3c3; }
+.problem .check{ font-size: 7.6pt; color: var(--g); margin-top: 1mm; }
+
+/* ===== 표 ===== */
+table{ border-collapse: collapse; width: 100%; margin: 2mm 0 3.5mm; font-size: 8.8pt; line-height: 1.5; break-inside: auto; }
+tr{ break-inside: avoid; } thead{ display: table-header-group; }
+.summary table, .tableread table, .pick table{ break-inside: avoid; }
+th{ background: var(--g2); font-weight: 800; padding: 1.4mm 2mm; border-top: 1.2pt solid var(--k); border-bottom: .6pt solid var(--k); text-align: center; }
+td{ padding: 1.3mm 2mm; border-bottom: .5pt solid #d9d9d9; vertical-align: top; }
+tr:last-child td{ border-bottom: 1pt solid var(--k); }
+ul, ol{ margin: 0 0 2.4mm; padding-left: 5.5mm; }
+li{ margin: .6mm 0; }
+li p{ margin: 0; }
+blockquote{ margin: 2mm 0; padding: 1mm 0 1mm 4mm; border-left: .8mm solid var(--g2); color: #444; }
+hr{ border: 0; border-top: .6pt solid var(--g2); margin: 5mm 0; }
+code{ font-family: "Noto Sans Mono CJK KR", monospace; font-size: 8.6pt; background: var(--g3); padding: 0 1mm; }
+pre{ background: var(--g3); padding: 3mm; font-size: 8pt; line-height: 1.45; white-space: pre-wrap; break-inside: avoid; }
+
+/* 시험 대비 팩 */
+.pack h3.other::before{ content:"▶ "; color: var(--k); }
+.pack .answer{ margin-top: 2mm; padding: 2mm 3mm; background: var(--y3); font-size: 8.8pt; }
+.pack .answer::before{ content:"정답 "; font-weight: 900; }
+
+/* ===== 정답과 풀이 ===== */
+.sol-section{ column-count: 2; column-gap: 7mm; column-rule: .5pt solid var(--g2); font-size: 8.6pt; line-height: 1.62; }
+.sol-chapter{ column-span: all; break-before: page; font-size: 15pt; font-weight: 900; padding: 2mm 0; border-bottom: 2pt solid var(--k); margin: 0 0 4mm; }
+.sol-chapter span{ background: var(--y); padding: 0 2.5mm; margin-right: 3mm; }
+.sol-item{ break-inside: avoid-column; margin: 0 0 3.5mm; }
+.sol-item .sh{ font-weight: 900; display:flex; gap: 2mm; align-items:center; margin-bottom: .8mm; }
+.sol-item .sh .bd{ width: 7mm; height: 7mm; border-radius: 50%; background: var(--y); display:flex; align-items:center; justify-content:center; font-size: 8.4pt; }
+.sol-item .ans{ font-weight: 800; background: var(--y3); padding: .6mm 2mm; margin-bottom: 1mm; }
+.sol-item .ans p{ margin:0; }
+.sol-item p{ margin: 0 0 1.4mm; }
+.sol-item .katex-display{ margin: 1.4mm 0; }
+.sol-item table{ font-size: 7.8pt; }
+
+/* 부록 분포표 */
+.dist table{ font-size: 7.2pt; line-height: 1.25; }
+.dist td, .dist th{ padding: .55mm 1mm; text-align: center; }
+.dist td:first-child{ font-weight: 800; background: var(--g3); }
+.dist .cap{ font-size: 8.4pt; color: #444; margin-bottom: 2mm; }
